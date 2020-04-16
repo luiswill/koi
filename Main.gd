@@ -2,5 +2,5 @@ extends Node
 
 
 func _ready():
-	print("hallo Elias du arschgesicht")
+	print("Koi de neuf ? ")
 
