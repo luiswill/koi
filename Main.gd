@@ -2,5 +2,6 @@ extends Node
 
 
 func _ready():
-	print("Work work work")
+	print("schau ab 3:00")
+	print("https://www.youtube.com/watch?v=msZw59Iln74")
 
