@@ -20,7 +20,7 @@ transform = Transform( 1, 0, 0, 0, 0.996993, -0.0774924, 0, 0.0774924, 0.996993,
 script = ExtResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 5.0
 autostart = true
 
 [node name="Area" type="Area" parent="."]
@@ -31,7 +31,7 @@ transform = Transform( 2.17729, 2.32831e-10, 5.96046e-08, -1.16415e-10, 2.17729,
 shape = SubResource( 1 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="Area/CollisionShape"]
-transform = Transform( 0.459287, -8.73115e-11, -7.45058e-09, 0, 0.459286, 1.62981e-09, -1.11759e-08, 3.0268e-09, 0.459287, 0, 0, 0 )
+transform = Transform( 0.459287, -1.16415e-10, -7.45058e-09, 5.58794e-09, 0.459286, 0, -7.45058e-09, 3.25963e-09, 0.459287, 0, 0, 0 )
 mesh = ExtResource( 3 )
 material/0 = null
 
@@ -57,3 +57,4 @@ environment = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 0.996994, -0.0774926, 0, 0.0774926, 0.996994, 4.89551, 1.7647, 6.65317 )
 
 [node name="animationMove4" parent="fish1" instance=ExtResource( 5 )]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
