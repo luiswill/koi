@@ -10,7 +10,6 @@ func _ready():
 
 
 func _on_Button_pressed():
-	
 	GLOBAL.buy_fish(carpeKoi)
 	update_money()
 	
