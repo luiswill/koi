@@ -49,6 +49,10 @@ GAME="*res://gameSettings.gd"
 window/size/width=400
 window/size/height=700
 
+[editor_plugins]
+
+enabled=PoolStringArray( "godot-sqlite" )
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
