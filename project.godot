@@ -8,9 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "Koi",
+"language": "GDScript",
+"path": "res://Koi.gd"
+}, {
+"base": "Node",
+"class": "Pond",
+"language": "GDScript",
+"path": "res://pond.gd"
+}, {
+"base": "Node",
+"class": "User",
+"language": "GDScript",
+"path": "res://user.gd"
+} ]
 _global_script_class_icons={
-
+"Koi": "res://assets/icons/koi-icon.png",
+"Pond": "",
+"User": ""
 }
 
 [application]
@@ -22,6 +39,15 @@ config/icon="res://icon.png"
 [autoload]
 
 GLOBAL="*res://global.gd"
+USER="*res://user.gd"
+KOI="*res://Koi.gd"
+POND="*res://pond.gd"
+GAME="*res://gameSettings.gd"
+
+[display]
+
+window/size/width=400
+window/size/height=700
 
 [rendering]
 
