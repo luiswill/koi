@@ -10,7 +10,6 @@ func convert_kois_from_db(koisData : Array):
 	return kois
 		
 
-
 func convert_to_koi(koiData):
 	var koi = KoiClass.new(koiData.id, koiData.name, koiData.price, koiData.speed, koiData.rarity)
 	return koi
