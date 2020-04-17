@@ -19,6 +19,11 @@ config/name="Koi"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GLOBAL="*res://global.gd"
+
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"

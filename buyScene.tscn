@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://buyScene.gd" type="Script" id=1]
+
+[node name="BuyPanel" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ -20.9248 ]
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1.50563
+margin_top = 90.3205
+margin_right = 61.5056
+margin_bottom = 121.321
+text = "Fishs :  "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 2.0217
+margin_top = 26.8827
+margin_right = 166.022
+margin_bottom = 82.8827
+text = "Buy fish"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

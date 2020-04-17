@@ -1,7 +1,14 @@
 extends Node
 
+var position = Vector3()
+var position2 = Vector3()
 
 func _ready():
-	print("schau ab 3:00")
-	print("https://www.youtube.com/watch?v=msZw59Iln74")
+	position = Vector3(1.0, 1.0, 1.0)
+	position2 = Vector3(2.0, 2.0, 2.0)
+	
+	
+
+func buy_fish():
+	print("Bought fish.")
 
