@@ -23,8 +23,6 @@ func _ready():
 	animation_scenes.append(animationMove2_scene)
 	animation_scenes.append(animationMove3_scene)
 	
-	
-	
 func buy_fish(koi: Koi):
 	user.decrease_money(koi.get_price())
 	pond.add_koi_to_pond(koi)
@@ -44,4 +42,24 @@ func create_new_koi_instance(koi):
 	
 	
 	add_child(koi_instance)
+	
+	
+func choose_random_koi():
+	var koiWillCome = random_int(1, 2)
+	if koiWillCome == 1:
+		var rarityChosen = GAME.rarityArr[randi() % GAME.rarityArr.size()]
+		print("rarity chosen : ", rarityChosen)
+		var koisToChooseFrom : Array = DBMODEL.convert_kois_from_db(DB.load_kois_from_db_with_condition("rarity == " + str(rarityChosen)))
+		
+		return koisToChooseFrom[randi() % koisToChooseFrom.size()]
+		
+	else:
+		return false
+	
+	
+	
+func random_int(min_value,max_value):
+	max_value += 1
+	var range_size = max_value - min_value
+	return (randi() % range_size) + min_value
 	
