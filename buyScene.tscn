@@ -1,29 +1,32 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://buyScene.gd" type="Script" id=1]
+[ext_resource path="res://koi_theme.tres" type="Theme" id=2]
 
 [node name="BuyPanel" type="Control"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false,
-"_edit_vertical_guides_": [ -20.9248 ]
+"_edit_vertical_guides_": [ 200.0 ]
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 1.50563
-margin_top = 90.3205
-margin_right = 61.5056
-margin_bottom = 121.321
-text = "Fishs :  "
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 96.0
+margin_bottom = 40.0
+theme = ExtResource( 2 )
+text = "Fishes :  "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 2.0217
-margin_top = 26.8827
-margin_right = 166.022
-margin_bottom = 82.8827
+margin_left = 144.0
+margin_top = 640.0
+margin_right = 256.0
+margin_bottom = 672.0
+theme = ExtResource( 2 )
 text = "Buy fish"
 __meta__ = {
 "_edit_use_anchors_": false
