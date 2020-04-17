@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/Koi/kahoku.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
-[ext_resource path="res://algae/algae.dae" type="PackedScene" id=3]
+[ext_resource path="res://environment/environment.tscn" type="PackedScene" id=3]
 [ext_resource path="res://buyScene.tscn" type="PackedScene" id=4]
 [ext_resource path="res://animations/move/animationMove4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://algae/algae.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ProceduralSky" id=1]
 
@@ -47,6 +48,8 @@ script = ExtResource( 2 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
+
+[node name="environment" parent="." instance=ExtResource( 3 )]
 
 [node name="Cambase" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.22443, 4.64623, -6.16815 )
@@ -94,21 +97,12 @@ transform = Transform( 1, 0, 0, 0, 0.996994, -0.0774926, 0, 0.0774926, 0.996994,
 
 [node name="animationMove4" parent="fish1" instance=ExtResource( 5 )]
 
-[node name="algae" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+[node name="algae" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.99464 )
 
-[node name="algae5" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.115388, 0, -0.993321, 0, 1, 0, 0.993321, 0, 0.115388, -5.58917, 0, 0 )
+[node name="algae2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.44211, 0, 14.4379 )
 
-[node name="algae" parent="algae5" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4283, -0.0160578, 3.85301 )
-
-[node name="algae2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.92189, 0, 3.31896 )
-
-[node name="algae3" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.04484, 0, 11.7648 )
-
-[node name="algae4" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0.696222, 0, 9.10974 )
+[node name="algae3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.44211, 2.91891, 10.9366 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

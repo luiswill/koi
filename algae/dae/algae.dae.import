@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/algae.dae-9d1d7d3adfe4370251e518cc8fcfe755.scn"
+path="res://.import/algae.dae-9fd7e56b95caf69591427f31558806f7.scn"
 
 [deps]
 
-source_file="res://algae/algae.dae"
-dest_files=[ "res://.import/algae.dae-9d1d7d3adfe4370251e518cc8fcfe755.scn" ]
+source_file="res://algae/dae/algae.dae"
+dest_files=[ "res://.import/algae.dae-9fd7e56b95caf69591427f31558806f7.scn" ]
 
 [params]
 

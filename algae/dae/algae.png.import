@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/algae.png.001.png-6fc951f38ee4b4e35b8c16856093bd72.s3tc.stex"
-path.etc2="res://.import/algae.png.001.png-6fc951f38ee4b4e35b8c16856093bd72.etc2.stex"
+path.s3tc="res://.import/algae.png-35ff5fcfbb3d4f10748277c9c14e8d35.s3tc.stex"
+path.etc2="res://.import/algae.png-35ff5fcfbb3d4f10748277c9c14e8d35.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://algae/algae.png.001.png"
-dest_files=[ "res://.import/algae.png.001.png-6fc951f38ee4b4e35b8c16856093bd72.s3tc.stex", "res://.import/algae.png.001.png-6fc951f38ee4b4e35b8c16856093bd72.etc2.stex" ]
+source_file="res://algae/dae/algae.png"
+dest_files=[ "res://.import/algae.png-35ff5fcfbb3d4f10748277c9c14e8d35.s3tc.stex", "res://.import/algae.png-35ff5fcfbb3d4f10748277c9c14e8d35.etc2.stex" ]
 
 [params]
 
