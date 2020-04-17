@@ -2,7 +2,7 @@ extends Control
 
 
 
-var carpeKoi = preload("Koi.gd").new("Carpe Koi", 10, 1, 1, 0)
+var carpeKoi = preload("Koi.gd").new(1, "Carpe Koi", 10, 1, 1)
 
 func _ready():
 	pass
