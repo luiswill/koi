@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/Koi/koi.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://algae/algae.dae" type="PackedScene" id=3]
 [ext_resource path="res://buyScene.tscn" type="PackedScene" id=4]
 [ext_resource path="res://animations/move/animationMove4.tscn" type="PackedScene" id=5]
 
@@ -92,4 +93,22 @@ shape = SubResource( 9 )
 transform = Transform( 1, 0, 0, 0, 0.996994, -0.0774926, 0, 0.0774926, 0.996994, 4.89551, 1.7647, 6.65317 )
 
 [node name="animationMove4" parent="fish1" instance=ExtResource( 5 )]
+
+[node name="algae" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+
+[node name="algae5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.115388, 0, -0.993321, 0, 1, 0, 0.993321, 0, 0.115388, -5.58917, 0, 0 )
+
+[node name="algae" parent="algae5" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4283, -0.0160578, 3.85301 )
+
+[node name="algae2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.92189, 0, 3.31896 )
+
+[node name="algae3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.04484, 0, 11.7648 )
+
+[node name="algae4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0.696222, 0, 9.10974 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
