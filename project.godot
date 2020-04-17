@@ -43,6 +43,8 @@ USER="*res://user.gd"
 KOI="*res://Koi.gd"
 POND="*res://pond.gd"
 GAME="*res://gameSettings.gd"
+DB="*res://database.gd"
+DBMODEL="*res://databaseModel.gd"
 
 [display]
 
