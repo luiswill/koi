@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://koi_theme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/return_icon.png" type="Texture" id=2]
+[ext_resource path="res://ui/returnButton.gd" type="Script" id=3]
+
+[node name="returnButton" type="Button"]
+margin_right = 40.0
+margin_bottom = 40.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="return_icon" type="Sprite" parent="."]
+position = Vector2( 20.3297, 20.0781 )
+scale = Vector2( 0.0518799, 0.0518799 )
+texture = ExtResource( 2 )
+[connection signal="pressed" from="." to="." method="_on_returnButton_pressed"]

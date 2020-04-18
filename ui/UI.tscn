@@ -1,0 +1,157 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://koi_theme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/cog _icon.png" type="Texture" id=2]
+[ext_resource path="res://ui/return_icon.png" type="Texture" id=3]
+[ext_resource path="res://shop/Shop.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/UI.gd" type="Script" id=5]
+[ext_resource path="res://ui/shop.png" type="Texture" id=6]
+[ext_resource path="res://fonts/Montserrat/Montserrat-SemiBold.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://ui/book.png" type="Texture" id=8]
+[ext_resource path="res://ui/mainButtons.gd" type="Script" id=9]
+[ext_resource path="res://ui/topUI.tscn" type="PackedScene" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 10
+font_data = ExtResource( 7 )
+
+[node name="UI" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 200.0 ]
+}
+
+[node name="shop" parent="." instance=ExtResource( 4 )]
+visible = false
+margin_right = 360.0
+margin_bottom = 660.0
+
+[node name="topUI" parent="." instance=ExtResource( 10 )]
+
+[node name="mainButtons" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttonShop" type="Button" parent="mainButtons"]
+margin_left = 336.0
+margin_top = 208.0
+margin_right = 432.0
+margin_bottom = 272.0
+rect_pivot_offset = Vector2( 144.913, 61 )
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="shopping_cart_icon" type="Sprite" parent="mainButtons/buttonShop"]
+position = Vector2( 28, 28 )
+scale = Vector2( 0.078125, 0.078125 )
+texture = ExtResource( 6 )
+
+[node name="shopLabel" type="Label" parent="mainButtons/buttonShop"]
+margin_left = 8.0
+margin_top = 48.0
+margin_right = 48.0
+margin_bottom = 61.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SHOP"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttonEncyclo" type="Button" parent="mainButtons"]
+margin_left = 336.0
+margin_top = 280.0
+margin_right = 432.0
+margin_bottom = 344.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="book" type="Sprite" parent="mainButtons/buttonEncyclo"]
+position = Vector2( 28.007, 25.8014 )
+scale = Vector2( 0.0827526, 0.0827526 )
+texture = ExtResource( 8 )
+
+[node name="encycloLabel" type="Label" parent="mainButtons/buttonEncyclo"]
+margin_left = 8.0
+margin_top = 48.0
+margin_right = 48.0
+margin_bottom = 61.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ENCY"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttonSettings" type="Button" parent="mainButtons"]
+margin_left = 336.0
+margin_top = 352.0
+margin_right = 432.0
+margin_bottom = 416.0
+rect_pivot_offset = Vector2( 144.913, 61 )
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="cog_icon" type="Sprite" parent="mainButtons/buttonSettings"]
+position = Vector2( 28.1538, 26.3096 )
+scale = Vector2( 0.0679198, 0.0679198 )
+texture = ExtResource( 2 )
+
+[node name="settingsLabel" type="Label" parent="mainButtons/buttonSettings"]
+margin_left = 8.0
+margin_top = 48.0
+margin_right = 48.0
+margin_bottom = 61.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "set"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="returnButton" type="Button" parent="."]
+visible = false
+margin_left = 16.0
+margin_top = 648.0
+margin_right = 56.0
+margin_bottom = 688.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="return_icon" type="Sprite" parent="returnButton"]
+position = Vector2( 20.3297, 20.0781 )
+scale = Vector2( 0.0518799, 0.0518799 )
+texture = ExtResource( 3 )
+[connection signal="pressed" from="mainButtons/buttonShop" to="." method="_on_buttonShop_pressed"]
+[connection signal="pressed" from="returnButton" to="." method="_on_returnButton_pressed"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://koi_theme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/level_icon.png" type="Texture" id=2]
+[ext_resource path="res://fonts/Montserrat/Montserrat-Black.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 3 )
+
+[node name="LevelScene" type="Control"]
+margin_right = 96.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="levelCircle" type="Sprite" parent="."]
+position = Vector2( 48, 40 )
+scale = Vector2( 0.117188, 0.117188 )
+texture = ExtResource( 2 )
+
+[node name="levelLabel" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 80.0
+margin_bottom = 37.0
+theme = ExtResource( 1 )
+text = "Level"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 80.0
+margin_bottom = 80.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
