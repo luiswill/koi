@@ -8,6 +8,7 @@ func choose_random_koi():
 		print("Random Koi ", random_koi)
 		var animationMove1_instance = load(GAME.koiVisitingAnimation).instance()
 		GLOBAL.create_new_koi_instance_with_animation(random_koi, animationMove1_instance)
+		check_if_koi_will_get_tamed(random_koi)
 	else:
 		print("Sorry bro, no koi")
 		
@@ -15,7 +16,7 @@ func choose_random_koi():
 		
 		
 func calculate_and_get_random_koi():
-	var koiWillCome = GLOBAL.random_int(1, 2)
+	var koiWillCome = GLOBAL.random_int(1, GAME.APPEARING_PROB)
 	if koiWillCome == 1:
 		var rarityChosen = GAME.rarityArr[randi() % GAME.rarityArr.size()]
 		print("rarity chosen : ", rarityChosen)
@@ -25,4 +26,10 @@ func calculate_and_get_random_koi():
 		
 	else:
 		return false
+		
+func check_if_koi_will_get_tamed(koi : Koi): 
+	
+	var plants : Array = DBMODEL.which_plants_do_this_koi_like(koi)
+	print("Koi likes theses plants ", plants)
+	
 	
