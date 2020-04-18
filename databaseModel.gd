@@ -32,3 +32,6 @@ func which_plants_do_this_koi_like(koi : Koi):
 	
 	return plants
 	
+
+func get_all_kois_of_rarity(rarity : int):
+	return convert_kois_from_db(DB.load_kois_from_db_with_condition("rarity == " + str(rarity)))

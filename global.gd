@@ -1,6 +1,6 @@
 extends Node
 
-var allKois : Array = []
+var all_kois : Array = []
 
 var user = preload("user.gd").new(1000)
 var pond = preload("pond.gd").new()
