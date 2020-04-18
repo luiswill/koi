@@ -45,14 +45,17 @@ func create_new_koi_instance_with_random_animation(koi : Koi):
 
 	animation_instance = get_a_random_animation().instance()
 
-	koi_instance.add_child(animation_instance)
+	return koi_instance.add_child(animation_instance)
 
 
 func create_new_koi_instance_with_animation(koi : Koi, animation : AnimationPlayer):
 	var koi_instance = create_new_koi_instance(koi)
 
-	koi_instance.add_child(animation)
-	
+	return koi_instance.add_child(animation)
+
+func add_animation_to_koi(animation : AnimationPlayer, koi : Koi):
+	koi.add_child(animation.play("GO_IN_POND"))
+	return animation
 	
 func random_int(min_value,max_value):
 	max_value += 1
