@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://Koi.gd"
 }, {
 "base": "Node",
+"class": "Plant",
+"language": "GDScript",
+"path": "res://Plant.gd"
+}, {
+"base": "Node",
 "class": "Pond",
 "language": "GDScript",
 "path": "res://pond.gd"
@@ -26,6 +31,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Koi": "res://assets/icons/koi-icon.png",
+"Plant": "res://assets/icons/koi-icon.png",
 "Pond": "",
 "User": ""
 }
