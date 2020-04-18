@@ -1,13 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://koi_theme.tres" type="Theme" id=1]
 [ext_resource path="res://fonts/Montserrat/Montserrat-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://shop/Shop.gd" type="Script" id=3]
-[ext_resource path="res://ui/buttonYamabukiOgon.tscn" type="PackedScene" id=4]
-[ext_resource path="res://ui/buttonPlatinumOgon.tscn" type="PackedScene" id=5]
-[ext_resource path="res://ui/buttonShowaSanshoku.tscn" type="PackedScene" id=6]
-[ext_resource path="res://ui/buttonTaishoSanke.tscn" type="PackedScene" id=7]
-[ext_resource path="res://ui/buttonKohaku.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -46,7 +41,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="allKois" type="GridContainer" parent="."]
+[node name="all_kois_container" type="GridContainer" parent="."]
 margin_left = 64.0
 margin_top = 168.0
 margin_right = 340.0
@@ -59,23 +54,3 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
-
-[node name="buttonPlatinumOgon" parent="allKois" instance=ExtResource( 5 )]
-
-[node name="buttonYamabukiOgon" parent="allKois" instance=ExtResource( 4 )]
-margin_left = 148.0
-margin_right = 276.0
-
-[node name="buttonTaishoSanke" parent="allKois" instance=ExtResource( 7 )]
-margin_top = 140.0
-margin_bottom = 260.0
-
-[node name="buttonShowaSanshoku" parent="allKois" instance=ExtResource( 6 )]
-margin_left = 148.0
-margin_top = 140.0
-margin_right = 276.0
-margin_bottom = 260.0
-
-[node name="buttonKohaku" parent="allKois" instance=ExtResource( 8 )]
-margin_top = 280.0
-margin_bottom = 400.0

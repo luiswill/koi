@@ -11,7 +11,6 @@ func check_if_koi_will_come_visit_pond():
 		var animation_instance : AnimationPlayer = load(GAME.koi_visiting_animation).instance()
 		GLOBAL.create_new_koi_instance_with_animation(random_koi, animation_instance)
 		
-		animation_instance.connect("animation_started ", self, "play_next_anim")
 		
 		
 		if check_if_koi_will_get_tamed(random_koi):	
