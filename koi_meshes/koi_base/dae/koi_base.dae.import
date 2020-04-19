@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/algae.dae-9fd7e56b95caf69591427f31558806f7.scn"
+path="res://.import/koi_base.dae-9580c76b2029095f402edd3b2fd2e02e.scn"
 
 [deps]
 
-source_file="res://algae/dae/algae.dae"
-dest_files=[ "res://.import/algae.dae-9fd7e56b95caf69591427f31558806f7.scn" ]
+source_file="res://koi_meshes/koi_base/dae/koi_base.dae"
+dest_files=[ "res://.import/koi_base.dae-9580c76b2029095f402edd3b2fd2e02e.scn" ]
 
 [params]
 
