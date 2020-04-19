@@ -42,13 +42,12 @@ __meta__ = {
 }
 
 [node name="all_kois_container" type="GridContainer" parent="."]
-margin_left = 64.0
+margin_left = 32.0
 margin_top = 168.0
-margin_right = 340.0
-margin_bottom = 1152.0
-rect_min_size = Vector2( 276, 984 )
-custom_constants/vseparation = 20
-custom_constants/hseparation = 20
+margin_right = 368.0
+margin_bottom = 576.0
+custom_constants/vseparation = 16
+custom_constants/hseparation = 16
 columns = 2
 __meta__ = {
 "_edit_group_": true,
