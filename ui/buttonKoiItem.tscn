@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://koi_theme.tres" type="Theme" id=1]
 [ext_resource path="res://ui/buttonKoiItem.gd" type="Script" id=2]
+[ext_resource path="res://koi_meshes/koi_base/obj/koi_base.obj" type="ArrayMesh" id=3]
+
+[sub_resource type="MeshTexture" id=2]
+mesh = ExtResource( 3 )
+image_size = Vector2( 100, 100 )
+
+[sub_resource type="MeshTexture" id=1]
+mesh = ExtResource( 3 )
+base_texture = SubResource( 2 )
+image_size = Vector2( 80, 50 )
 
 [node name="buttonKoiItem" type="Button"]
 margin_right = 128.0
@@ -16,20 +26,35 @@ __meta__ = {
 [node name="image" type="TextureRect" parent="."]
 margin_left = 24.0
 margin_top = 16.0
-margin_right = 104.0
+margin_right = 124.0
 margin_bottom = 72.0
+texture = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="name" type="Label" parent="."]
-margin_left = 8.0
-margin_top = 80.0
-margin_right = 120.0
-margin_bottom = 117.0
+margin_left = 7.43118
+margin_top = 56.6792
+margin_right = 119.431
+margin_bottom = 93.6792
 theme = ExtResource( 1 )
 custom_constants/line_spacing = -5
 text = "Koi"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="price" type="Label" parent="."]
+margin_left = 7.43121
+margin_top = 86.2568
+margin_right = 119.431
+margin_bottom = 123.257
+theme = ExtResource( 1 )
+custom_constants/line_spacing = -5
+text = "Price"
 align = 1
 valign = 1
 __meta__ = {
