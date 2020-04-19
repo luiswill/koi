@@ -14,11 +14,12 @@ func _on_user_updated():
 	load_ui_with_user_infos()
 	
 	
-	
 
 func load_ui_with_user_infos():
 	$topUI/money.text = str(GAME.currency + str(GLOBAL.user.get_money()))
 	$topUI/LevelScene/level.text = str(GLOBAL.user.get_level())
+	$topUI/experience.value = GLOBAL.user.get_exp()
+	$topUI/experience.max_value = GAME.LEVEL_XPS[GLOBAL.user.get_level()]
 	
 
 

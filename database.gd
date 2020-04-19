@@ -73,6 +73,19 @@ func load_plants_with_ids(plants_id : Array):
 	
 	return selected_array
 	
+	
+func load_kois_with_ids(kois_id : Array):
+	print("Loading kois with id ", kois_id)
+	
+	var condition : String = ("id IN " + str(kois_id)).replace("[", "(").replace("]", ")")
+	
+	var selected_array : Array = db.select_rows(table_kois_name, condition, ["*"])
+	#db.query("SELECT * FROM " + table_plants_name + " WHERE id in [1,2,3];")
+	#print("There are ", db.query_result[0])
+	
+	return selected_array
+	
+	
 func save_user_to_database(user):
 	var query : String = "UPDATE USER SET"
 	query += "'money' = " + str(user.get_money())

@@ -5,7 +5,9 @@ const PlantClass = preload("Plant.gd")
 const UserClass = preload("user.gd")
 
 func convert_user_from_db(userData):
-	var user : User = UserClass.new("User", userData.money, userData.level, userData.exp, [], [])
+	var kois_ids : Array = userData.koisUnlocked.split(",")
+
+	var user : User = UserClass.new("User", userData.money, int(userData.level), userData.exp, kois_ids, [])
 	
 	return user
 

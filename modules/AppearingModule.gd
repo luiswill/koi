@@ -60,8 +60,10 @@ func check_if_koi_stays_in_pond_with(plants_he_likes : Array):
 	return GLOBAL.random_int(1, 100) <= probability_of_being_tamed
 
 func check_if_koi_is_already_unlocked(koi : Koi) -> void:
-	#print("Kois already unlocked : ", USER.get_kois_unlocked())
-	pass
+	if(koi in GLOBAL.user.get_kois_unlocked()):
+		GLOBAL.user.increment_exp(GAME.EXP_ADDED_IF_ALREADY_UNLOCKED)
+	else:
+		GLOBAL.user.increment_exp(GAME.EXP_ADDED_IF_NEW_UNLOCKED)
 
 func taming_process(koi : Koi):
 	POND.add_koi_to_pond(koi) # don't forget
