@@ -11,8 +11,6 @@ func check_if_koi_will_come_visit_pond():
 		var animation_instance : AnimationPlayer = load(GAME.koi_visiting_animation).instance()
 		GLOBAL.create_new_koi_instance_with_animation(random_koi, animation_instance)
 		
-		
-		
 		if check_if_koi_will_get_tamed(random_koi):	
 			print("Koi will get tamed.")
 			GLOBAL.user.increase_money(10)
@@ -20,12 +18,9 @@ func check_if_koi_will_come_visit_pond():
 		else:
 			print("Koi will not get tamed.")
 			
-		
-		
 	else:
 		print("Sorry bro, no koi")
-		
-		
+
 		
 func play_next_anim(): 
 	print("PLAYING ANIM!")
@@ -44,9 +39,7 @@ func check_if_koi_will_get_tamed(koi : Koi):
 	var plants : Array = DBMODEL.which_plants_do_this_koi_like(koi)
 	print("Koi likes theses plants ", plants)
 	return check_if_koi_stays_in_pond_with(plants)
-	
-	
-	
+
 func check_if_koi_stays_in_pond_with(plants_he_likes : Array):
 	print("Let's check if the pond already has these plants")
 	var probability_of_being_tamed : int = GAME.STARTING_PROBABILITY_OF_BEING_TAMED
@@ -60,10 +53,16 @@ func check_if_koi_stays_in_pond_with(plants_he_likes : Array):
 	return GLOBAL.random_int(1, 100) <= probability_of_being_tamed
 
 func check_if_koi_is_already_unlocked(koi : Koi) -> void:
-	if(koi in GLOBAL.user.get_kois_unlocked()):
+	if(koi.get_id() in GLOBAL.user.get_kois_ids_unlocked()):
 		GLOBAL.user.increment_exp(GAME.EXP_ADDED_IF_ALREADY_UNLOCKED)
 	else:
+		print("ADDING KOI TO UNLOCKED", koi.get_id())
+		add_koi_to_unlocked_kois(koi)
 		GLOBAL.user.increment_exp(GAME.EXP_ADDED_IF_NEW_UNLOCKED)
+		
+		
+func add_koi_to_unlocked_kois(koi : Koi) -> void:
+	GLOBAL.user.add_koi_unlocked(koi)
 
 func taming_process(koi : Koi):
 	POND.add_koi_to_pond(koi) # don't forget

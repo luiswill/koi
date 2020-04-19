@@ -6,7 +6,12 @@ const UserClass = preload("user.gd")
 
 func convert_user_from_db(userData):
 	var kois_ids : Array = userData.koisUnlocked.split(",")
-
+	
+	var i = 0
+	for koi_id_string in kois_ids:
+		kois_ids[i] = int(koi_id_string)
+		i += 1
+		
 	var user : User = UserClass.new("User", userData.money, int(userData.level), userData.exp, kois_ids, [])
 	
 	return user

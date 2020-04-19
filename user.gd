@@ -4,8 +4,8 @@ var _name : String
 var _money : int
 var _level : int
 var _exp :  int
-var _kois_unlocked : Array
-var _plants_unlocked : Array
+var _kois_unlocked_ids : Array = []
+var _plants_unlocked_ids : Array = []
 
 onready var UI_instance = load("res://ui/UI.tscn").new()
 
@@ -19,8 +19,8 @@ func _init(name : String, money : int, level : int, experience : int, koisUnlock
 	self._money = money
 	self._exp = experience
 	self._level = level
-	self._kois_unlocked = koisUnlocked
-	self._plants_unlocked = plantsUnlocked
+	self._kois_unlocked_ids = koisUnlocked
+	self._plants_unlocked_ids = plantsUnlocked
 	
 	update_user_ui()
 
@@ -76,11 +76,26 @@ func set_money(newMoney):
 func get_money():
 	return self._money
 	
-func get_kois_unlocked():
-	return DBMODEL.convert_kois_from_db(DB.load_kois_with_ids(self._kois_unlocked))
+func add_koi_unlocked(koi : Koi) -> void:
+	var arr = get_kois_ids_unlocked()
+	#https://github.com/godotengine/godot/issues/34161
 	
-func set_kois_unlocked(newKois : Array) -> void:
-	self._kois_unlocked = newKois
+	# WTF ACHTUNG !
+
+	arr.append(koi.get_id())
+	
+	
+	set_kois_ids_unlocked(arr)
+	
+	
+func get_kois_unlocked():
+	return DBMODEL.convert_kois_from_db(DB.load_kois_with_ids(self._kois_unlocked_ids))
+	
+func get_kois_ids_unlocked():
+	return self._kois_unlocked_ids
+	 
+func set_kois_ids_unlocked(new : Array = []):
+	self._kois_unlocked_ids = new
 	
 func update_user_ui() -> void:
 	#why not animated ? 		
