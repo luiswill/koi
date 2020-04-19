@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cog _icon.png-a2542d490b327c5f6b356fda12539670.stex"
+path="res://.import/cog _icon.png-e058c123baa658263f088e6aa4070dfa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/cog _icon.png"
-dest_files=[ "res://.import/cog _icon.png-a2542d490b327c5f6b356fda12539670.stex" ]
+source_file="res://ui/icons/cog _icon.png"
+dest_files=[ "res://.import/cog _icon.png-e058c123baa658263f088e6aa4070dfa.stex" ]
 
 [params]
 

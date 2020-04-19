@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/level_icon.png-6d480f9cb2afbd2447a72c96a0dc32a8.stex"
+path="res://.import/book.png-5295d641651808008a5843e7455faade.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/level_icon.png"
-dest_files=[ "res://.import/level_icon.png-6d480f9cb2afbd2447a72c96a0dc32a8.stex" ]
+source_file="res://ui/icons/book.png"
+dest_files=[ "res://.import/book.png-5295d641651808008a5843e7455faade.stex" ]
 
 [params]
 
