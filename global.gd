@@ -2,8 +2,8 @@ extends Node
 
 var all_kois : Array = []
 
-var user = preload("user.gd").new(1000)
-var pond = preload("pond.gd").new()
+var user : User
+var pond : Pond
 
 var koi_instance
 onready var koi_scene = preload("res://scenes/Koi/kahoku.tscn")

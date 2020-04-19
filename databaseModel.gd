@@ -2,6 +2,12 @@ extends Node
 
 const KoiClass = preload("Koi.gd")
 const PlantClass = preload("Plant.gd")
+const UserClass = preload("user.gd")
+
+func convert_user_from_db(userData):
+	var user : User = UserClass.new("User", userData.money, userData.level, userData.exp, [], [])
+	
+	return user
 
 func convert_kois_from_db(koisData : Array):
 	var kois : Array = []
@@ -9,7 +15,6 @@ func convert_kois_from_db(koisData : Array):
 	for koi in koisData:
 		kois.append(convert_to_koi(koi))
 	return kois
-		
 		
 func convert_plants_from_db(plants_data : Array):
 	var plants : Array = []
@@ -31,7 +36,6 @@ func which_plants_do_this_koi_like(koi : Koi):
 	var plants : Array = DBMODEL.convert_plants_from_db(DB.load_plant_attractions_of_koi(koi))
 	
 	return plants
-	
 
 func get_all_kois_of_rarity(rarity : int):
 	return convert_kois_from_db(DB.load_kois_from_db_with_condition("rarity == " + str(rarity)))
