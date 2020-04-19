@@ -51,6 +51,7 @@ POND="*res://pond.gd"
 GAME="*res://gameSettings.gd"
 DB="*res://database.gd"
 DBMODEL="*res://databaseModel.gd"
+EVENTS="*res://Events.gd"
 
 [display]
 

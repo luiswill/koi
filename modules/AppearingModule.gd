@@ -1,13 +1,13 @@
 extends Node
 
-
-
 func check_if_koi_will_come_visit_pond():
 	print("New fish will maybe come ..")
 	
 	var random_koi = calculate_and_get_random_koi()
 	if random_koi:
-		print("Random Koi ", random_koi)
+		print("Random Koi appearing ", random_koi)
+		
+		check_if_koi_is_already_unlocked(random_koi)
 		var animation_instance : AnimationPlayer = load(GAME.koi_visiting_animation).instance()
 		GLOBAL.create_new_koi_instance_with_animation(random_koi, animation_instance)
 		
@@ -15,6 +15,7 @@ func check_if_koi_will_come_visit_pond():
 		
 		if check_if_koi_will_get_tamed(random_koi):	
 			print("Koi will get tamed.")
+			GLOBAL.user.increase_money(10)
 			taming_process(random_koi)
 		else:
 			print("Koi will not get tamed.")
@@ -58,6 +59,10 @@ func check_if_koi_stays_in_pond_with(plants_he_likes : Array):
 			
 	return GLOBAL.random_int(1, 100) <= probability_of_being_tamed
 
+func check_if_koi_is_already_unlocked(koi : Koi) -> void:
+	#print("Kois already unlocked : ", USER.get_kois_unlocked())
+	pass
+
 func taming_process(koi : Koi):
 	POND.add_koi_to_pond(koi) # don't forget
 	var animation_taming : AnimationPlayer = load(GAME.koi_taming_animation).instance()
@@ -80,6 +85,7 @@ func choose_rarity():
 	if random_int <= GAME.PROB_5:
 		return 5
 		
+	return 1
 	
 	
 	
