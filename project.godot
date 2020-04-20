@@ -12,26 +12,26 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Koi",
 "language": "GDScript",
-"path": "res://Koi.gd"
+"path": "res://scripts/Koi.gd"
 }, {
 "base": "Node",
 "class": "Plant",
 "language": "GDScript",
-"path": "res://Plant.gd"
+"path": "res://scripts/Plant.gd"
 }, {
 "base": "Node",
 "class": "Pond",
 "language": "GDScript",
-"path": "res://pond.gd"
+"path": "res://scripts/pond.gd"
 }, {
 "base": "Node",
 "class": "User",
 "language": "GDScript",
-"path": "res://user.gd"
+"path": "res://scripts/user.gd"
 } ]
 _global_script_class_icons={
-"Koi": "res://assets/icons/koi-icon.png",
-"Plant": "res://assets/icons/koi-icon.png",
+"Koi": "",
+"Plant": "",
 "Pond": "",
 "User": ""
 }
@@ -44,14 +44,15 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GLOBAL="*res://global.gd"
-USER="*res://user.gd"
-KOI="*res://Koi.gd"
-POND="*res://pond.gd"
-GAME="*res://gameSettings.gd"
-DB="*res://database.gd"
-DBMODEL="*res://databaseModel.gd"
-EVENTS="*res://Events.gd"
+GLOBAL="*res://scripts/global.gd"
+USER="*res://scripts/user.gd"
+KOI="*res://scripts/Koi.gd"
+POND="*res://scripts/pond.gd"
+GAME="*res://scripts/gameSettings.gd"
+DB="*res://scripts/database.gd"
+DBMODEL="*res://scripts/databaseModel.gd"
+EVENTS="*res://scripts/Events.gd"
+GESTURES="*res://assets/godot-gesture/GestureDetector.gd"
 
 [display]
 
@@ -64,7 +65,13 @@ window/handheld/orientation="portrait"
 
 enabled=PoolStringArray( "godot-sqlite" )
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
 environment/default_environment="res://default_env.tres"

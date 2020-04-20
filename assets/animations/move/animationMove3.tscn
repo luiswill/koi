@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "animationMove3"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1, 3.1, 5.1, 7.1, 9.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 3.92915, 0.866399, 4.57327 ), Vector3( 3.92915, 1.6891, 6.72632 ), Vector3( 1.67371, 0.938949, 6.78462 ), Vector3( 3.65201, 0.938949, 6.78462 ), Vector3( 3.65201, 1.5313, 8.75986 ) ]
+}
+
+[node name="animationMove3" type="AnimationPlayer"]
+autoplay = "animationMove3"
+anims/animationMove3 = SubResource( 1 )
