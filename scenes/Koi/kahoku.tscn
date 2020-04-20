@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scenes/Koi/fish_test.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://koi_meshes/koi_base/obj/koi_base.obj" type="ArrayMesh" id=1]
 
 [sub_resource type="SphereShape" id=1]
 radius = 0.48

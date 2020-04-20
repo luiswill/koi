@@ -54,4 +54,8 @@ transform = Transform( 1, 0, 0, 0, 0.996994, -0.0774926, 0, 0.0774926, 0.996994,
 [node name="animationMove4" parent="fish1" instance=ExtResource( 5 )]
 
 [node name="UI" parent="." instance=ExtResource( 7 )]
+margin_left = -0.950012
+margin_top = -0.949982
+margin_right = 39.05
+margin_bottom = 39.05
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
