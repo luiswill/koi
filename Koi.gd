@@ -1,6 +1,6 @@
 extends Node
 
-var _id : int
+var _id : int = 0
 var _name : String
 var _price : int
 var _speed : float
@@ -45,6 +45,6 @@ func set_sceneUrl(newSceneUrl : String):
 	self._sceneUrl = newSceneUrl
 	
 func _to_string():
-	var s = self._name + " : " + str(self._price) + GAME.currency
+	var s = "(" + str(self._id) + ") " + self._name + " : " + str(self._price) + GAME.currency
 	return s
 

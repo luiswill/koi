@@ -86,12 +86,21 @@ func load_kois_with_ids(kois_id : Array):
 	return selected_array
 	
 	
-func save_user_to_database(user):
-	var query : String = "UPDATE USER SET"
+func save_user_to_database(user : User) -> void:
+	var kois_ids_formatted : String = str(user.get_kois_ids_unlocked()).replace("[", "").replace("]", "").replace(" ", "")
+
+	
+	print("KOIS IDS formatted", kois_ids_formatted)
+	
+	
+	var query : String = "UPDATE USER SET "
 	query += "'money' = " + str(user.get_money())
 	query += ", 'level' = " + str(user.get_level())
 	query += ", 'exp' = " + str(user.get_exp())
+	query += ", 'koisUnlocked' = '" + kois_ids_formatted + "'"
 	query += ";"
+	
+	print("query", query)
 	db.query(query)	
 	
 

@@ -7,7 +7,7 @@ var koi_taming_animation = "res://animations/taming/animationTaming1.tscn"
 
 
 # LEVEL XP
-var LEVEL_XPS = [0, 100, 200, 300, 400]
+var LEVEL_XPS = [0, 100, 200, 300, 400, 1000, 5000, 10000]
 
 
 #Appearing Module
