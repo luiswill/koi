@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scenes/Koi/kahoku.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Main.gd" type="Script" id=2]
-[ext_resource path="res://environment/environment.tscn" type="PackedScene" id=3]
-[ext_resource path="res://animations/move/animationMove4.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Camera.gd" type="Script" id=6]
+[ext_resource path="res://kahoku.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Main.gd" type="Script" id=2]
+[ext_resource path="res://assets/environment/environment.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/animations/move/animationMove4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/camera_control.gd" type="Script" id=6]
 [ext_resource path="res://ui/UI.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Environment" id=1]
@@ -25,13 +25,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.968691, 0.958721, 0 )
 script = ExtResource( 2 )
 
 [node name="Cambase" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.22443, 4.64623, -6.16815 )
 
 [node name="Camera" type="Camera" parent="Cambase"]
-transform = Transform( -0.707107, 0.541675, -0.45452, 0, 0.642788, 0.766044, 0.707107, 0.541675, -0.45452, -4.18113, 21.8527, -6.61155 )
+transform = Transform( -0.68488, 0.54548, -0.483106, 0.00335659, 0.665364, 0.746511, 0.728648, 0.509649, -0.457526, -0.92794, 20.6832, -2.19417 )
 environment = SubResource( 1 )
 fov = 31.1931
 script = ExtResource( 6 )
+local = false
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Cambase"]
 transform = Transform( 0.999993, -0.00378777, 0.000340261, 0.000251346, 0.155101, 0.987899, -0.00379471, -0.987891, 0.155101, 1.32784, 51.573, 14.6034 )
@@ -43,6 +43,7 @@ directional_shadow_split_1 = 0.2
 environment = SubResource( 3 )
 
 [node name="environment" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.51087, -0.24966, -2.17658 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
@@ -54,8 +55,5 @@ transform = Transform( 1, 0, 0, 0, 0.996994, -0.0774926, 0, 0.0774926, 0.996994,
 [node name="animationMove4" parent="fish1" instance=ExtResource( 5 )]
 
 [node name="UI" parent="." instance=ExtResource( 7 )]
-margin_left = -0.950012
-margin_top = -0.949982
-margin_right = 39.05
-margin_bottom = 39.05
+grow_horizontal = 2
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

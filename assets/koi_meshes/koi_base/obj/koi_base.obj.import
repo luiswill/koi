@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/koi_base.obj-83769fbdaa93f1ef9b9cb11723e429cd.mesh"
+
+[deps]
+
+files=[ "res://.import/koi_base.obj-83769fbdaa93f1ef9b9cb11723e429cd.mesh" ]
+
+source_file="res://assets/koi_meshes/koi_base/obj/koi_base.obj"
+dest_files=[ "res://.import/koi_base.obj-83769fbdaa93f1ef9b9cb11723e429cd.mesh", "res://.import/koi_base.obj-83769fbdaa93f1ef9b9cb11723e429cd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/Water_002_NORM.jpg-2accde03fa302612b1809f77dfed367d.s3tc.stex"
 path.etc2="res://.import/Water_002_NORM.jpg-2accde03fa302612b1809f77dfed367d.etc2.stex"
+path.etc="res://.import/Water_002_NORM.jpg-2accde03fa302612b1809f77dfed367d.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://water/uv/Water_002_NORM.jpg"
-dest_files=[ "res://.import/Water_002_NORM.jpg-2accde03fa302612b1809f77dfed367d.s3tc.stex", "res://.import/Water_002_NORM.jpg-2accde03fa302612b1809f77dfed367d.etc2.stex" ]
+dest_files=[ "res://.import/Water_002_NORM.jpg-2accde03fa302612b1809f77dfed367d.s3tc.stex", "res://.import/Water_002_NORM.jpg-2accde03fa302612b1809f77dfed367d.etc2.stex", "res://.import/Water_002_NORM.jpg-2accde03fa302612b1809f77dfed367d.etc.stex" ]
 
 [params]
 

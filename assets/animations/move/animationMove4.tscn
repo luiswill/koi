@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 resource_name = "animation4"
 length = 10.0
 loop = true
@@ -19,4 +19,4 @@ tracks/0/keys = {
 
 [node name="animationMove4" type="AnimationPlayer"]
 autoplay = "animation4"
-anims/animation4 = SubResource( 4 )
+anims/animation4 = SubResource( 1 )

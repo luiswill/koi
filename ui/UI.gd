@@ -1,6 +1,6 @@
 extends Control
 
-var carpeKoi = preload("res://Koi.gd").new(1, "Carpe Koi", 10, 1, 1)
+var carpeKoi = preload("res://scripts/Koi.gd").new(1, "Carpe Koi", 10, 1, 1)
 
 func _ready():
 #	load_ui_with_user_infos()

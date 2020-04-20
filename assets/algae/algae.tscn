@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/algae/dae/palette.material" type="Material" id=1]
+[ext_resource path="res://assets/algae/dae/algae.dae" type="PackedScene" id=2]
+
+[node name="algae" instance=ExtResource( 2 )]
+
+[node name="ObjObject" parent="." index="0"]
+transform = Transform( 2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0 )
+material/0 = ExtResource( 1 )
+
+[node name="Camera" parent="." index="1"]
+visible = false
+
+[node name="Light" parent="." index="2"]
+visible = false

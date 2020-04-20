@@ -3,13 +3,14 @@
 [ext_resource path="res://koi_theme.tres" type="Theme" id=1]
 [ext_resource path="res://ui/icons/cog _icon.png" type="Texture" id=2]
 [ext_resource path="res://ui/icons/return_icon.png" type="Texture" id=3]
-[ext_resource path="res://shop/Shop.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/shop/Shop.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ui/UI.gd" type="Script" id=5]
 [ext_resource path="res://ui/icons/shop.png" type="Texture" id=6]
 [ext_resource path="res://fonts/Montserrat/Montserrat-SemiBold.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://ui/icons/book.png" type="Texture" id=8]
 [ext_resource path="res://ui/mainButtons.gd" type="Script" id=9]
 [ext_resource path="res://ui/topUI.tscn" type="PackedScene" id=10]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 10
