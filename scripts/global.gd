@@ -6,7 +6,7 @@ var user : User
 var pond : Pond
 
 var koi_instance
-onready var koi_scene = load("res://assets/koi_meshes/koi_base/dae/koi_base.dae")
+onready var koi_scene = load("res://assets/koi_meshes/koi_base/koi_base.tscn")
 
 var animation_instance
 

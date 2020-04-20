@@ -2,8 +2,8 @@ extends Node
 
 var currency = " ¥"
 
-var koi_visiting_animation = "res://animations/visiting/animationVisiting1.tscn"
-var koi_taming_animation = "res://animations/taming/animationTaming1.tscn"
+var koi_visiting_animation = "res://assets/animations/visiting/animationVisiting1.tscn"
+var koi_taming_animation = "res://assets/animations/taming/animationTaming1.tscn"
 
 
 # LEVEL XP
