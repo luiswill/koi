@@ -48,6 +48,14 @@ func save_user():
 
 
 func load_user():
+	
+	print("loading user data ")
+	var f = File.new()
+	if f.file_exists(GAME_DATA_FILE):
+		print("FILE EXISTS")
+	else:
+		print("DOESN't EXIST")
+	
 	var file = File.new()
 	var user : User
 	print("test")
