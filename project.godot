@@ -30,8 +30,8 @@ _global_script_classes=[ {
 "path": "res://scripts/user.gd"
 } ]
 _global_script_class_icons={
-"Koi": "",
-"Plant": "",
+"Koi": "res://assets/icons/koi-icon.png",
+"Plant": "res://assets/icons/koi-icon.png",
 "Pond": "",
 "User": ""
 }
@@ -45,14 +45,15 @@ config/icon="res://icon.png"
 [autoload]
 
 GLOBAL="*res://scripts/global.gd"
+EVENTS="*res://scripts/Events.gd"
 USER="*res://scripts/user.gd"
 KOI="*res://scripts/Koi.gd"
 POND="*res://scripts/pond.gd"
 GAME="*res://scripts/gameSettings.gd"
 DB="*res://scripts/database.gd"
 DBMODEL="*res://scripts/databaseModel.gd"
-EVENTS="*res://scripts/Events.gd"
 GESTURES="*res://assets/godot-gesture/GestureDetector.gd"
+DATA="*res://data.gd"
 
 [display]
 
@@ -63,12 +64,11 @@ window/handheld/orientation="portrait"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "godot-sqlite" )
+enabled=PoolStringArray(  )
 
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
-pointing/emulate_mouse_from_touch=false
 
 [rendering]
 

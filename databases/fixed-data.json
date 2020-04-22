@@ -1,0 +1,103 @@
+{
+    "kois": [
+        {
+            "expDebloqued": 100,
+            "expTamed": 10,
+            "id": 1,
+            "name": "Kahoku",
+            "price": 250,
+            "rarity": 1,
+            "speed": 1
+        },
+        {
+            "expDebloqued": 100,
+            "expTamed": 10,
+            "id": 2,
+            "name": "Ogon",
+            "price": 500,
+            "rarity": 2,
+            "speed": 2
+        },
+        {
+            "expDebloqued": 100,
+            "expTamed": 10,
+            "id": 3,
+            "name": "MaxiOgon",
+            "price": 1000,
+            "rarity": 3,
+            "speed": 2
+        },
+        {
+            "expDebloqued": 100,
+            "expTamed": 10,
+            "id": 4,
+            "name": "IchkakmirInDieHoseOgon",
+            "price": 2000,
+            "rarity": 4,
+            "speed": 1
+        },
+        {
+            "expDebloqued": 100,
+            "expTamed": 10,
+            "id": 5,
+            "name": "BrutalMegaOgon",
+            "price": 5000,
+            "rarity": 5,
+            "speed": 4
+        }
+    ],
+    "koisAttractions": [
+        {
+            "koiId": 1,
+            "plantId": 1
+        },
+        {
+            "koiId": 1,
+            "plantId": 3
+        },
+        {
+            "koiId": 1,
+            "plantId": 2
+        },
+        {
+            "koiId": 4,
+            "plantId": 2
+        },
+        {
+            "koiId": 5,
+            "plantId": 1
+        }
+    ],
+    "plants": [
+        {
+            "id": 1,
+            "name": "Brennessel",
+            "price": 15,
+            "rarity": 1
+        },
+        {
+            "id": 2,
+            "name": "Apfel",
+            "price": 30,
+            "rarity": 1
+        },
+        {
+            "id": 3,
+            "name": "Algae",
+            "price": 10,
+            "rarity": 1
+        },
+        {
+            "id": 4,
+            "name": "Nenuphar",
+            "price": 20,
+            "rarity": 1
+        },
+        {
+            "id": 5,
+            "name": "Miroslav Klose",
+            "price": 35,
+            "rarity": 1
+        }
+    ]
+}

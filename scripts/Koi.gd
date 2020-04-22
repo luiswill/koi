@@ -1,50 +1,55 @@
 extends Node
 
-var _id : int = 0
-var _name : String
-var _price : int
-var _speed : float
-var _rarity : int
-var _sceneUrl : String
+var id : int = 0
+var koi_name : String
+var price : int
+var speed : float
+var rarity : int
+var sceneUrl : String
 
 class_name Koi, "res://assets/icons/koi-icon.png"
 
 
 func _init(id: int, name : String, price : float, speed : float, rarity : int):
-	self._id = id
-	self._name = name
-	self._price = price
-	self._speed = speed
-	self._rarity = rarity
-	self._sceneUrl = "res://scenes/Koi/kahoku"
+	self.id = id
+	self.koi_name = name
+	self.price = price
+	self.speed = speed
+	self.rarity = rarity
+	self.sceneUrl = "res://scenes/Koi/kahoku"
 	
 
 func get_id(): 
-	return self._id
+	return self.id
 
 func set_id(newId : int): 
-	self._id = newId
+	self.id = newId
 
-func get_name():
-	return self._name
+func get_koi_name():
+	return self.koi_name
 	
-func set_name(newName: String):
-	self._name = newName
+func set_koi_name(newName: String):
+	self.koi_name = newName
 	
 func get_price(): 
-	return self._price;
+	return self.price;
 	
 func set_price(newPrice: int):
-	self._price = newPrice
+	self.price = newPrice
 	
+func get_rarity() -> int:
+	return self.rarity
+	
+func set_rarity(newRarity : int) -> void:
+	self.rarity = newRarity
 	
 func get_sceneUrl():
-	return self._sceneUrl;
+	return self.sceneUrl;
 	
 func set_sceneUrl(newSceneUrl : String): 
-	self._sceneUrl = newSceneUrl
+	self.sceneUrl = newSceneUrl
 	
 func _to_string():
-	var s = "(" + str(self._id) + ") " + self._name + " : " + str(self._price) + GAME.currency
+	var s = "(" + str(self.id) + ") " + self.koi_name + " : " + str(self.price) + GAME.currency
 	return s
 

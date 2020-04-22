@@ -1,106 +1,93 @@
 extends Node
 
-const SQLite = preload("res://addons/godot-sqlite/bin/gdsqlite.gdns");
 
-var db : SQLite
-#var db_name = "user://test"
-var db_name : String = "res://koi_db.db"
-#var db_name = "test"
-var table_kois_name : String = "Kois"
-var table_kois_plants_attractions_name : String = "KoisAttractions"
-var table_plants_name : String = "Plants"
+const FIXED_DATA_FILE = "res://databases/fixed-data.json"
+const GAME_DATA_FILE = "res://databases/game-data.json"
+
+var userClass = preload("res://scripts/user.gd")
+var koiClass = preload("res://scripts/Koi.gd")
 
 
-	
 func _exit_tree():
-	print("Closed SQLite DB.")
-	save_user_to_database(GLOBAL.user)
-	db.close_db()	
+	save_user()
 	
-func load_db():
-	db = SQLite.new()	
-	db.path = db_name
-#	db.verbose_mode = true
-	# Open the database using the db_name found in the path variable
-	db.open_db()
-	print("Opened SQLite DB")
+
+func get_all_kois_with_condition(property_name : String, condition):
+	var kois_to_return : Array = []
+	for koi in GLOBAL.all_kois:
+		if koi[property_name] == condition:
+			kois_to_return.append(koi)
+		
+	return kois_to_return
 	
+func load_game_data():
+	var file = File.new()
+	if file.file_exists(FIXED_DATA_FILE):
+		file.open(FIXED_DATA_FILE, File.READ)
+		var data = parse_json(file.get_as_text())
+		file.close()
+		if typeof(data) == TYPE_DICTIONARY:
+			GLOBAL.all_kois = convert_kois_from_db(data.kois)
+			GLOBAL.all_plants = convert_plants_from_db(data.plants)
+			GLOBAL.all_kois_plants_attractions = data.koisAttractions
+		else:
+			printerr("Corrupted data!")
+	else:
+		printerr("No saved data!")
+	
+func save_user():
+	var file = File.new()
+	file.open(GAME_DATA_FILE, File.WRITE)
+	var user_to_save : Dictionary = inst2dict(GLOBAL.user)
+	user_to_save.erase("@subpath")
+	user_to_save.erase("@path")
+	user_to_save.erase("UI_instance")
+	
+	file.store_string(JSON.print(user_to_save))
+	file.close()
+
+
 func load_user():
-	db.query("SELECT * FROM User;")
-	return db.query_result[0]
+	var file = File.new()
+	var user : User
+	print("test")
+	if file.file_exists(GAME_DATA_FILE):
+		file.open(GAME_DATA_FILE, File.READ)
+		
+		var json : Dictionary = JSON.parse(file.get_as_text()).result
 	
+		GLOBAL.user = userClass.new(json.username, json.money, json.level, json.experience, json.kois_unlocked_ids, json.plants_unlocked_ids)
 
-func load_kois_from_db():
-
-	# Select the id and age of the employees that are older than 30
-	var select_condition : String = ""
-	var selected_array : Array = db.select_rows(table_kois_name, select_condition, ["*"])
-	
-	
-	return selected_array
-
-
-func load_kois_from_db_with_condition(condition : String):
-	
-	var selected_array : Array = db.select_rows(table_kois_name, condition, ["*"])
-	
-	return selected_array
-	
-	
-func load_plant_attractions_of_koi(koi : Koi):
-	var koiId = koi.get_id()
-
-	var condition : String = "koiId == " + str(koiId) 
-	
-	var plants_ids_db_result : Array = db.select_rows(table_kois_plants_attractions_name, condition, ["plantId"])
-	
-	var plants_ids : Array;
-	
-	for plantItem in plants_ids_db_result:
-		plants_ids.append(plantItem.plantId)
+		file.close()
+			
+	else:
+		printerr("No saved data!")
 
 
-	return load_plants_with_ids(plants_ids)
+func convert_kois_from_db(koisData : Array):
+	var kois : Array = []
+	
+	for koi in koisData:
+		kois.append(convert_to_koi(koi))
+	return kois
 	
 	
-func load_plants_with_ids(plants_id : Array):
-	
-	var condition : String = ("id IN " + str(plants_id)).replace("[", "(").replace("]", ")")
-	
-	var selected_array : Array = db.select_rows(table_plants_name, condition, ["*"])
-	#db.query("SELECT * FROM " + table_plants_name + " WHERE id in [1,2,3];")
-	#print("There are ", db.query_result[0])
-	
-	return selected_array
-	
-	
-func load_kois_with_ids(kois_id : Array):
-	print("Loading kois with id ", kois_id)
-	
-	var condition : String = ("id IN " + str(kois_id)).replace("[", "(").replace("]", ")")
-	
-	var selected_array : Array = db.select_rows(table_kois_name, condition, ["*"])
-	#db.query("SELECT * FROM " + table_plants_name + " WHERE id in [1,2,3];")
-	#print("There are ", db.query_result[0])
-	
-	return selected_array
-	
-	
-func save_user_to_database(user : User) -> void:
-	var kois_ids_formatted : String = str(user.get_kois_ids_unlocked()).replace("[", "").replace("]", "").replace(" ", "")
 
+func convert_to_koi(koiData):
+	var koi = koiClass.new(koiData.id, koiData.name, koiData.price, koiData.speed, koiData.rarity)
+	return koi
+
+
+
+func convert_plants_from_db(plants_data : Array):
+	var plants : Array = []
 	
-	print("KOIS IDS formatted", kois_ids_formatted)
-	
-	
-	var query : String = "UPDATE USER SET "
-	query += "'money' = " + str(user.get_money())
-	query += ", 'level' = " + str(user.get_level())
-	query += ", 'exp' = " + str(user.get_exp())
-	query += ", 'koisUnlocked' = '" + kois_ids_formatted + "'"
-	query += ";"
-	
-	print("query", query)
-	db.query(query)	
-	
+	for plant in plants_data:
+		plants.append(convert_to_plant(plant))
+	return plants
+		
+
+func convert_to_plant(plant_data):
+	var plant = Plant.new(plant_data.id, plant_data.name, plant_data.price, plant_data.rarity)
+	return plant
 

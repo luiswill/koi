@@ -1,6 +1,8 @@
 extends Node
 
 var all_kois : Array = []
+var all_plants : Array = []
+var all_kois_plants_attractions : Array = []
 
 var user : User
 var pond : Pond

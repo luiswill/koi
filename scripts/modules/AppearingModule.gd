@@ -54,11 +54,12 @@ func check_if_koi_stays_in_pond_with(plants_he_likes : Array):
 
 func check_if_koi_is_already_unlocked(koi : Koi) -> void:
 	if(koi.get_id() in GLOBAL.user.get_kois_ids_unlocked()):
-		GLOBAL.user.increment_exp(GAME.EXP_ADDED_IF_ALREADY_UNLOCKED)
+		GLOBAL.user.increment_experience(GAME.EXP_ADDED_IF_ALREADY_UNLOCKED)
 	else:
 		print("ADDING KOI TO UNLOCKED", koi.get_id())
 		add_koi_to_unlocked_kois(koi)
-		GLOBAL.user.increment_exp(GAME.EXP_ADDED_IF_NEW_UNLOCKED)
+		GLOBAL.user.increment_experience(GAME.EXP_ADDED_IF_NEW_UNLOCKED)
+		
 		
 		
 func add_koi_to_unlocked_kois(koi : Koi) -> void:

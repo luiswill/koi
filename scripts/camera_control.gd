@@ -4,9 +4,6 @@
 extends Camera
 
 
-
-
-
 const MAX_POINTS = 10
 
 var points : Array = []
