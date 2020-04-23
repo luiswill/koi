@@ -1,22 +1,3 @@
-[gd_scene load_steps=10 format=2]
-
-[ext_resource path="res://assets/koi_meshes/koi_base/koi_base.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scripts/Main.gd" type="Script" id=2]
-[ext_resource path="res://assets/environment/environment.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/animations/move/animationMove4.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scripts/camera_control.gd" type="Script" id=6]
-[ext_resource path="res://ui/UI.tscn" type="PackedScene" id=7]
-
-[sub_resource type="Environment" id=1]
-ambient_light_color = Color( 0.603922, 0.603922, 0.603922, 1 )
-dof_blur_far_enabled = true
-dof_blur_far_transition = 50.0
-glow_enabled = true
-
-[sub_resource type="ProceduralSky" id=2]
-
-[sub_resource type="Environment" id=3]
-background_mode = 2
 background_sky = SubResource( 2 )
 ambient_light_color = Color( 1, 1, 1, 1 )
 
@@ -38,6 +19,8 @@ transform = Transform( 0.999993, -0.00378777, 0.000340261, 0.000251346, 0.155101
 light_energy = 0.3
 shadow_enabled = true
 directional_shadow_split_1 = 0.2
+directional_shadow_blend_splits = true
+directional_shadow_normal_bias = 8.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
@@ -57,3 +40,4 @@ transform = Transform( 1, 0, 0, 0, 0.996994, -0.0774926, 0, 0.0774926, 0.996994,
 [node name="UI" parent="." instance=ExtResource( 7 )]
 grow_horizontal = 2
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="mouse_entered" from="fish1" to="." method="_on_fish1_mouse_entered"]
