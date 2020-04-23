@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://koi_theme.tres" type="Theme" id=1]
+[ext_resource path="res://fonts/Montserrat/Montserrat-Bold.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 2 )
+
+[node name="encyclopedia" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 4.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="encycloLabel" type="Label" parent="."]
+margin_left = 72.0
+margin_top = 96.0
+margin_right = 328.0
+margin_bottom = 130.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "encyclopedia"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_editor_description_": ""
+}

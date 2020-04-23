@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/koi_base.dae-cb73a8b380e15052a27b598bd35139da.scn"
+path="res://.import/CubeDude.dae-7f54de53c19d16794b391a9c1b14b8bc.scn"
 
 [deps]
 
-source_file="res://assets/koi_meshes/koi_base/dae/koi_base.dae"
-dest_files=[ "res://.import/koi_base.dae-cb73a8b380e15052a27b598bd35139da.scn" ]
+source_file="res://assets/test/CubeDude.dae"
+dest_files=[ "res://.import/CubeDude.dae-7f54de53c19d16794b391a9c1b14b8bc.scn" ]
 
 [params]
 
