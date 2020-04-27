@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/algae.dae-ee5afa1d3ed3a4d846fafe6afaa0ac70.scn"
+path="res://.import/mountain_1.dae-741a192cf6f7f97abfeae1093992e514.scn"
 
 [deps]
 
-source_file="res://assets/algae/dae/algae.dae"
-dest_files=[ "res://.import/algae.dae-ee5afa1d3ed3a4d846fafe6afaa0ac70.scn" ]
+source_file="res://assets/environment/mountains/mountain_1/dae/mountain_1.dae"
+dest_files=[ "res://.import/mountain_1.dae-741a192cf6f7f97abfeae1093992e514.scn" ]
 
 [params]
 

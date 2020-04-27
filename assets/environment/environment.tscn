@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Plants/Algae/Algae.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/environment/environment.gd" type="Script" id=2]
 [ext_resource path="res://assets/environment/AlgaeModule.gd" type="Script" id=3]
 [ext_resource path="res://assets/environment/KoiModule.gd" type="Script" id=4]
+[ext_resource path="res://assets/algae/algae.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/environment/mountains/mountain_1/mountain_1.tscn" type="PackedScene" id=2]
+
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -36,6 +38,7 @@ transform = Transform( -8, -3.01992e-07, -1.60647e-19, 1.20797e-06, -2, -5.24537
 mesh = SubResource( 4 )
 material/0 = null
 
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
@@ -49,3 +52,9 @@ transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, -0.278738, 0, 0 )
 [node name="kois" type="Node" parent="."]
 script = ExtResource( 4 )
 [connection signal="timeout" from="Timer" to="algaes" method="_on_Timer_timeout"]
+
+[node name="mountain_1" parent="." instance=ExtResource( 2 )]
+transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, -74.2446 )
+
+[node name="algae" parent="." instance=ExtResource( 1 )]
+
