@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Koi.gd"
 }, {
-"base": "Node",
+"base": "Spatial",
 "class": "Plant",
 "language": "GDScript",
 "path": "res://scripts/Plant.gd"
@@ -52,8 +52,7 @@ POND="*res://scripts/pond.gd"
 GAME="*res://scripts/gameSettings.gd"
 DB="*res://scripts/database.gd"
 DBMODEL="*res://scripts/databaseModel.gd"
-GESTURES="*res://assets/godot-gesture/GestureDetector.gd"
-DATA="*res://data.gd"
+AlgaeModule="*res://scripts/modules/AlgaeModule.gd"
 
 [display]
 
@@ -67,6 +66,14 @@ window/stretch/aspect="keep_width"
 [editor_plugins]
 
 enabled=PoolStringArray(  )
+
+[input]
+
+mouse_left_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [input_devices]
 

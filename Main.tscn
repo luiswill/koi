@@ -1,55 +1,22 @@
+[gd_scene load_steps=6 format=2]
 
-
-
-[gd_scene load_steps=10 format=2]
-[ext_resource path="res://scripts/Main.gd" type="Script" id=2]
-
-[ext_resource path="res://assets/koi_meshes/koi_base/koi_base.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Main.gd" type="Script" id=2]
 [ext_resource path="res://assets/environment/environment.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scripts/camera_control.gd" type="Script" id=6]
 [ext_resource path="res://ui/UI.tscn" type="PackedScene" id=7]
 
-[sub_resource type="Environment" id=1]
-ambient_light_color = Color( 0.603922, 0.603922, 0.603922, 1 )
-dof_blur_far_enabled = true
-dof_blur_far_transition = 50.0
-dof_blur_far_quality = 2
-glow_enabled = true
+[sub_resource type="ProceduralSky" id=1]
 
-[sub_resource type="ProceduralSky" id=2]
-
-[sub_resource type="Environment" id=3]
+[sub_resource type="Environment" id=2]
 background_mode = 2
-background_sky = SubResource( 2 )
+background_sky = SubResource( 1 )
 ambient_light_color = Color( 1, 1, 1, 1 )
 
 [node name="Main" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.968691, 0.958721, 0 )
 script = ExtResource( 2 )
 
-[node name="Navigation" type="Navigation" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.996994, -0.0774926, 0, 0.0774926, 0.996994, 4.89551, 1.7647, 6.65317 )
-
-[node name="Cambase" type="Spatial" parent="."]
-
-[node name="Camera" type="Camera" parent="Cambase"]
-transform = Transform( -0.68488, 0.54548, -0.483106, 0.00335659, 0.665364, 0.746512, 0.728648, 0.509649, -0.457526, -6.32101, 29.0168, -7.30168 )
-environment = SubResource( 1 )
-fov = 31.1931
-script = ExtResource( 6 )
-local = false
-
-[node name="DirectionalLight" type="DirectionalLight" parent="Cambase"]
-transform = Transform( 0.999993, -0.00378777, 0.000340261, 0.000251346, 0.155101, 0.987899, -0.00379471, -0.987891, 0.155101, 1.32784, 51.573, 14.6034 )
-light_energy = 0.3
-shadow_enabled = true
-directional_shadow_split_1 = 0.2
-directional_shadow_blend_splits = true
-directional_shadow_normal_bias = 8.0
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 3 )
+environment = SubResource( 2 )
 
 [node name="environment" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.51087, -0.24966, -2.17658 )
