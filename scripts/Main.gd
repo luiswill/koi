@@ -10,10 +10,9 @@ var user : User
 
 func _enter_tree():
 #	DB.save_user()
-	print("ENTERING TREE")
-	DB.load_user()
 	DB.load_game_data()
-	print(GLOBAL.all_plants)
+
+	DB.load_user()
 
 	
 func _ready():
@@ -21,7 +20,7 @@ func _ready():
 	pass
 
 
-	
+
 
 func _on_Timer_timeout():
 #	print("TIMER")
@@ -29,3 +28,8 @@ func _on_Timer_timeout():
 #	DATA.player.level += 1
 	AppearingModule.check_if_koi_will_come_visit_pond()
 	pass
+
+
+func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx):
+	if Input.is_action_pressed("mouse_left_click"):
+		print("LEFT CLICK")

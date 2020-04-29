@@ -2,39 +2,10 @@
 
 [ext_resource path="res://scenes/Plants/PlantTemplate.gd" type="Script" id=1]
 [ext_resource path="res://assets/sounds/Blop-Mark_DiAngelo-79054334.wav" type="AudioStream" id=2]
+[ext_resource path="res://scenes/Plants/PlantClickScaleEffect.anim" type="Animation" id=3]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.549352, 1.2055, 1 )
-
-[sub_resource type="Animation" id=2]
-resource_name = "ClickedPlantEffect"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Area/CollisionShape/Armature:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 1, 1, 1 ), Vector3( 1, 0.92, 1 ), Vector3( 1, 0.93, 1 ), Vector3( 1, 0.95, 1 ), Vector3( 1, 1, 1 ) ]
-}
-tracks/1/type = "audio"
-tracks/1/path = NodePath("AudioStreamPlayer3D")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 2 )
-} ],
-"times": PoolRealArray( 0 )
-}
 
 [node name="PlantTemplate" type="Spatial"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, -0.278738, 0, 0 )
@@ -48,7 +19,7 @@ shape = SubResource( 1 )
 [node name="Armature" type="Spatial" parent="Area/CollisionShape"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/ClickedPlantEffect = SubResource( 2 )
+anims/ClickedPlantEffect = ExtResource( 3 )
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 2 )

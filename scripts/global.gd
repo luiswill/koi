@@ -1,7 +1,7 @@
 extends Node
 
-var all_kois : Array = []
-var all_plants : Array = []
+
+
 var all_kois_plants_attractions : Array = []
 
 var user : User
@@ -25,9 +25,12 @@ func _ready():
 	animation_scenes.append(animationMove2_scene)
 	animation_scenes.append(animationMove3_scene)
 	
+	
+
+
 func buy_fish(koi: Koi):
 	user.decrease_money(koi.get_price())
-	pond.add_koi_to_pond(koi)
+#	pond.add_koi_to_pond(koi)
 	create_new_koi_instance(koi)
 	
 func get_a_random_animation():
@@ -64,3 +67,5 @@ func random_int(min_value,max_value):
 	var range_size = max_value - min_value
 	return (randi() % range_size) + min_value
 	
+
+

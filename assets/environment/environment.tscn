@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/Plants/Algae/AlgaDamp/AlgaDampScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/environment/environment.gd" type="Script" id=2]
 [ext_resource path="res://assets/environment/AlgaeModule.gd" type="Script" id=3]
 [ext_resource path="res://assets/environment/KoiModule.gd" type="Script" id=4]
 [ext_resource path="res://assets/environment/Camera.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Koi/Kois/PlatiniumOgon/PlatiniumOgonScene.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -37,18 +38,24 @@ transform = Transform( -8, -3.01992e-07, -1.60647e-19, 1.20797e-06, -2, -5.24537
 mesh = SubResource( 4 )
 material/0 = null
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
-
 [node name="algaes" type="Node" parent="."]
 script = ExtResource( 3 )
 
 [node name="AlgaDamp" parent="algaes" instance=ExtResource( 1 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, -10 )
 
+[node name="AlgaTimer" type="Timer" parent="algaes"]
+wait_time = 3.0
+autostart = true
+
 [node name="kois" type="Node" parent="."]
 script = ExtResource( 4 )
+
+[node name="Koi" parent="kois" instance=ExtResource( 6 )]
+transform = Transform( 0.992945, 0, 0.118577, 0, 1, 0, -0.118577, 0, 0.992945, -0.501018, 0, -6.61669 )
+
+[node name="KoiTimer" type="Timer" parent="kois"]
+wait_time = 5.0
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.99989, -0.00163379, 0.0147373, -0.00645542, 0.846807, 0.531861, -0.0133486, -0.531898, 0.846703, 0, 11.3979, 0 )
@@ -56,4 +63,5 @@ current = true
 script = ExtResource( 5 )
 mouse_mode = 0
 smoothness = 0.778
-[connection signal="timeout" from="Timer" to="algaes" method="_on_Timer_timeout"]
+[connection signal="timeout" from="algaes/AlgaTimer" to="algaes" method="_on_Timer_timeout"]
+[connection signal="timeout" from="kois/KoiTimer" to="kois" method="_on_KoiTimer_timeout"]
