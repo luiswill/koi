@@ -7,7 +7,6 @@ var speed : float
 var rarity : int
 var sceneUrl : String
 
-class_name Koi, "res://assets/icons/koi-icon.png"
 
 
 func _init(id: int, name : String, price : float, speed : float, rarity : int):

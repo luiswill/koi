@@ -7,8 +7,6 @@ var experience :  int
 var kois_unlocked_ids : Array = []
 var plants_unlocked_ids : Array = []
 
-onready var UI_instance = load("res://ui/UI.tscn").new()
-
 class_name User
 
 func _ready(): 

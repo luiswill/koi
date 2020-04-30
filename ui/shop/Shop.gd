@@ -1,7 +1,7 @@
 extends Control
 
 onready var button = preload("res://ui/buttonKoiItem.gd")
-onready var kois
+onready var kois : Array
 
 onready var button_template = preload("res://ui/buttonKoiItem.tscn")
 var button_instance : Button
@@ -9,19 +9,16 @@ var button_instance : Button
 var all_kois_container
 
 func _ready():
-	kois = GLOBAL.all_kois
-	print("kois", kois)
+	kois = Kois.all_kois
+
 	load_all_buttons()
 	
 	
 func load_all_buttons():
 	all_kois_container = get_node("all_kois_container")
 	
-	for koi in GLOBAL.all_kois:
-		#Design a button for every koi
+	for koi in kois:
 		load_shop_button_for_koi(koi)
-		
-		
 
 
 func load_shop_button_for_koi(koi : Koi):
