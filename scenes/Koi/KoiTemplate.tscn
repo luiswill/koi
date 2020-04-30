@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/Koi/KoiTemplate.gd" type="Script" id=1]
-[ext_resource path="res://scenes/GUI/GUIPanel3DKoiName.tscn" type="PackedScene" id=2]
 
-[sub_resource type="CapsuleMesh" id=2]
+[sub_resource type="CapsuleMesh" id=1]
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="CapsuleShape" id=2]
 radius = 1.3342
 height = 2.08003
 
@@ -15,15 +14,13 @@ script = ExtResource( 1 )
 [node name="RigidBody" type="RigidBody" parent="."]
 
 [node name="MeshInstance" type="MeshInstance" parent="RigidBody"]
-mesh = SubResource( 2 )
+mesh = SubResource( 1 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="KoiName" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
-
-[node name="GUIPanel3D" parent="KoiName" instance=ExtResource( 2 )]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
