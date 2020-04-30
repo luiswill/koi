@@ -80,7 +80,7 @@ func get_kois_from_ingame():
 	
 	var kois_files : Array = get_kois_instance_scenes_files(kois_folder)
 
-
+	print(kois_files)
 	for koi_file in kois_files:
 		var koi : Koi = load(koi_file).instance()
 		
@@ -105,7 +105,7 @@ func get_kois_instance_scenes_files(scan_dir : String) -> Array:
 		if dir.current_is_dir():
 			my_files += get_kois_instance_scenes_files(dir.get_current_dir() + "/" + file_name)
 		else:
-			if ".tscn" in file_name:		
+			if "Scene.tscn" in file_name:		
 				my_files.append(dir.get_current_dir() + "/" + file_name)
 	
 		file_name = dir.get_next()
