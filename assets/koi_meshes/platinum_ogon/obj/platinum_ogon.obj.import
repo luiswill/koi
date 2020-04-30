@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/platinum_ogon.obj-5be733bd70732373de7df8a679617b4f.mesh"
+
+[deps]
+
+files=[ "res://.import/platinum_ogon.obj-5be733bd70732373de7df8a679617b4f.mesh" ]
+
+source_file="res://assets/koi_meshes/platinum_ogon/obj/platinum_ogon.obj"
+dest_files=[ "res://.import/platinum_ogon.obj-5be733bd70732373de7df8a679617b4f.mesh", "res://.import/platinum_ogon.obj-5be733bd70732373de7df8a679617b4f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
