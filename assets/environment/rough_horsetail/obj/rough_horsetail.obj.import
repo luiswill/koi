@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rough_horsetail.obj-07194c0d5535e37033f81151d48c1db8.mesh"
+
+[deps]
+
+files=[ "res://.import/rough_horsetail.obj-07194c0d5535e37033f81151d48c1db8.mesh" ]
+
+source_file="res://assets/environment/rough_horsetail/obj/rough_horsetail.obj"
+dest_files=[ "res://.import/rough_horsetail.obj-07194c0d5535e37033f81151d48c1db8.mesh", "res://.import/rough_horsetail.obj-07194c0d5535e37033f81151d48c1db8.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
